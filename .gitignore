@@ -1,0 +1,9 @@
+# API key - never commit this
+Part1/config.js
+
+# React build stuff
+Part2/node_modules
+Part2/dist
+
+# misc
+.DS_Store
