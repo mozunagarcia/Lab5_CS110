@@ -1,10 +1,10 @@
-# Lab 4
+# Lab 5 - React Componenets and Hooks
 
 **Author:** Mari Ozuna Garcia (mozun002)
 
 ---
 
-## Part 1 - NYT Most Popular Articles
+## NYT Most Popular Articles
 
 Fetches articles from the NYT Most Popular API and displays the top 5 with filters.
 
@@ -31,32 +31,3 @@ Periods: `1` = last day, `7` = last week, `30` = last month
 No external libraries — plain HTML, CSS, and JS.
 
 ---
-
-## Part 2 - Tic Tac Toe (React)
-
-A Tic Tac Toe game built with React + Vite.
-
-### Setup
-
-```bash
-cd Part2
-npm install
-npm run dev
-```
-
-Then open `http://localhost:5173` in your browser.
-
-### Features
-
-- X always goes first
-- Tracks score for X and O across games
-- Detects winner (and ties) and displays the result
-- New Game button resets the board but keeps the score
-- Extra credit: React Router with an About page (`/about`)
-
-### Files
-
-- **src/Board.jsx** — main game component with all the logic
-- **src/About.jsx** — about page (extra credit)
-- **src/App.jsx** — sets up routing between the game and about page
-- **src/App.css** — styles for the board, nav, etc.
