@@ -1,79 +1,218 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: sans-serif;
-  background: #f5f5f5;
+  padding: 0;
 }
 
-/* top nav */
-.nav {
-  display: flex;
-  gap: 20px;
-  padding: 12px 20px;
-  background: #222;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.nav a:hover {
-  text-decoration: underline;
-}
-
-/* game */
-.game {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a2e;
   padding: 20px;
 }
 
-.scoreboard {
-  display: flex;
-  gap: 40px;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.status {
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.board-row {
-  display: flex;
-}
-
-.square {
-  width: 80px;
-  height: 80px;
-  font-size: 36px;
-  font-weight: bold;
-  border: 2px solid #333;
-  background: white;
-  cursor: pointer;
-}
-
-.square:hover {
-  background: #eee;
-}
-
-.new-game-btn {
-  margin-top: 16px;
-  padding: 8px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* about page */
-.about {
-  padding: 30px;
-  max-width: 500px;
+.app {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.about ul {
-  text-align: left;
+/* reactive title */
+.main-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 28px;
+}
+
+/* side-by-side layout */
+.main-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* sidebar */
+.sidebar {
+  background: white;
+  width: 200px;
+  padding: 20px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.search-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-group input {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.search-group button {
+  padding: 6px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.search-group button:hover {
+  background: #1558c0;
+}
+
+.filter-group {
+  margin-bottom: 16px;
+}
+
+.filter-group strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.filter-group label {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.filter-group input[type='radio'] {
+  accent-color: #1a73e8;
+  margin-right: 6px;
+}
+
+/* article area */
+.articles-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 2-column grid: odd articles land in col 1, even in col 2 */
+.articles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* single article card */
+.article-card {
+  background-color: #f5f5f5;
+  color: #111;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.article-date {
+  color: #777;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.article-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.article-body img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.placeholder-img {
+  width: 100px;
+  height: 70px;
+  background: #ccc;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.article-abstract {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+.article-error {
+  color: #c00;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.page-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: #1a73e8;
+  color: white;
+  border-color: #1a73e8;
+}
+
+.page-btn:hover:not(.active) {
+  background: #e0e0e0;
+}
+
+/* status messages */
+.status-msg {
+  color: #ccc;
+  font-size: 1rem;
+  padding: 20px;
+}
+
+/* responsive: single column under 900px */
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
 }
